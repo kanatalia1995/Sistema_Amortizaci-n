@@ -5,6 +5,7 @@
  */
 package sistema_amortización;
 
+import Adaptadores.TipoCambio.AdaptadorBCCR;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -39,7 +40,8 @@ public class Sistema_Amortizacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        AdaptadorBCCR adpta = new AdaptadorBCCR();
+        System.out.print(adpta.getTipoCambio());
     }
     
 }
