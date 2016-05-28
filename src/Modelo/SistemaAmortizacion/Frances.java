@@ -26,12 +26,21 @@ public class Frances extends SistemaAmortizacion{
 
     @Override
     public double calcularAmortizacion(double pDeudaInicial) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Double cuota;
+        Double interes;
+        cuota=this.calcularCuota(pDeudaInicial);
+        interes=this.calcularInteres();
+        return cuota-interes;
     }
 
     @Override
     public double calcularCuota(double pCuentaInicial) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Double cuota;
+        Double interes=this.getInteresAnual();
+        Double periodo=(double) this.getPeriodos();
+        Double monto=this.getMontoInicial();
+        cuota=(interes/(1-(1/(Math.pow((1+interes),periodo)))))*monto;
+        return cuota;
     }
     
 }
