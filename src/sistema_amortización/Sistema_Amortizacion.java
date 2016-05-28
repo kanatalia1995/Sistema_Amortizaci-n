@@ -5,6 +5,7 @@
  */
 package sistema_amortización;
 
+import Adaptadores.FechaHoraSistema.AdaptadorChuky;
 import Adaptadores.TipoCambio.AdaptadorBCCR;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -42,6 +43,9 @@ public class Sistema_Amortizacion {
     public static void main(String[] args) {
         AdaptadorBCCR adpta = new AdaptadorBCCR();
         System.out.print(adpta.getTipoCambio());
+        
+        AdaptadorChuky adp =  new AdaptadorChuky();
+        System.out.print(adp.getFechaHora());
     }
     
 }
