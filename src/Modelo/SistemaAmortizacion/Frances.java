@@ -28,22 +28,17 @@ public class Frances extends SistemaAmortizacion{
         tablaAmortizacion+="Roberto\n";//this.getCliente().toString()+"\n";
         tablaAmortizacion+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
         tablaAmortizacion+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
-        tablaAmortizacion+="Interés Anual: "+String.valueOf(this.getInteresAnual()*100)+"%\n";
+        tablaAmortizacion+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
         tablaAmortizacion+="Sistema de amortización: Francés\n";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
         tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
         
         for (int i=1;i<=this.getPeriodos();i++){
             String montoActual=String.valueOf(this.getDeudaActual());
-            System.out.println(montoActual);
             String interesActual=String.valueOf(this.calcularInteres());
-            System.out.println(interesActual);
             String amortizacionActual=String.valueOf(calcularAmortizacion(this.getMontoInicial()));
-            System.out.println(amortizacionActual);
             String cuota=String.valueOf(calcularCuota(this.getMontoInicial()));
-            System.out.println(cuota);
-            tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";
-            System.out.println("\n");
+            tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";             
         }
         tablaAmortizacion+="Total\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales());
         return tablaAmortizacion;
@@ -56,6 +51,8 @@ public class Frances extends SistemaAmortizacion{
         cuota=this.calcularCuota(pDeudaInicial);
         interes=this.calcularInteres();
         Double resultado=cuota-interes;
+        this.actualizarMontoInteres(interes);
+        this.actualizarCuotasTotales(cuota);
         this.actualizarAmortizacion(resultado);
         return resultado;
         
@@ -68,7 +65,6 @@ public class Frances extends SistemaAmortizacion{
         Double periodo=(double)this.getPeriodos();
         Double monto=this.getMontoInicial();
         cuota=(interes/(1-(1/(Math.pow((1+interes),periodo)))))*monto;
-        this.actualizarCuotasTotales(cuota);
         return cuota;
     }
     

@@ -51,7 +51,6 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     
     public double calcularInteres(){
         Double interes=this.deudaActual*this.interesAnual;
-        this.actualizarMontoInteres(interes);
         return interes;
     }
     
