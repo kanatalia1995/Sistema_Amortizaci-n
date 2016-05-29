@@ -34,6 +34,10 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
         this.periodos = pPeriodos;
         this.interesAnual = pInteresAnual;
         this.tipoMoneda = pTipoMoneda;
+        this.deudaActual = pMontoInicial;
+        this.interesTotal = 0;
+        this.amortizacion = 0;
+        this.cuotasTotales = 0;
     }
     
     

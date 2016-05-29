@@ -25,7 +25,7 @@ public class Frances extends SistemaAmortizacion{
         AdaptadorBCCR adpta = new AdaptadorBCCR();
         String tablaAmortizacion="Tipo de cambio compra BCCR: "+String.valueOf(adpta.getTipoCambio());
         tablaAmortizacion+="\nDatos de la consulta:\n";
-        tablaAmortizacion+="Roberto";//this.getCliente().toString()+"\n";
+        tablaAmortizacion+="Roberto\n";//this.getCliente().toString()+"\n";
         tablaAmortizacion+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
         tablaAmortizacion+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
         tablaAmortizacion+="Interés Anual: "+String.valueOf(this.getInteresAnual()*100)+"%\n";
@@ -35,10 +35,15 @@ public class Frances extends SistemaAmortizacion{
         
         for (int i=1;i<=this.getPeriodos();i++){
             String montoActual=String.valueOf(this.getDeudaActual());
+            System.out.println(montoActual);
             String interesActual=String.valueOf(this.calcularInteres());
+            System.out.println(interesActual);
             String amortizacionActual=String.valueOf(calcularAmortizacion(this.getMontoInicial()));
+            System.out.println(amortizacionActual);
             String cuota=String.valueOf(calcularCuota(this.getMontoInicial()));
+            System.out.println(cuota);
             tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";
+            System.out.println("\n");
         }
         tablaAmortizacion+="Total\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales());
         return tablaAmortizacion;
