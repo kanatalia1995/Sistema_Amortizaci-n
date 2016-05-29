@@ -25,7 +25,7 @@ public class Frances extends SistemaAmortizacion{
     public String calcularTablaAmortizacion() {
         String tablaAmortizacion="";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
-        tablaAmortizacion+="\nPeriodo\tDeuda Inicial    \tIntereses   \tAmortizacion   \tCuota  \n\n";
+        tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
         
         for (int i=1;i<=this.getPeriodos();i++){
             String montoActual=String.valueOf(this.getDeudaActual());
