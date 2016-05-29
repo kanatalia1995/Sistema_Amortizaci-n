@@ -40,7 +40,6 @@ public class Aleman extends SistemaAmortizacion {
     @Override
     public double calcularAmortizacion(double pDeudaInicial) {
         double amortizacion=pDeudaInicial/this.getPeriodos();
-        this.actualizarAmortizacion(amortizacion);
         return amortizacion;
     }
 
@@ -49,8 +48,8 @@ public class Aleman extends SistemaAmortizacion {
         double interes=this.calcularInteres();
         this.actualizarMontoInteres(interes);
         double amortizacion=this.calcularAmortizacion(pCuentaInicial);
-        this.actualizarAmortizacion(amortizacion);
         double cuota=interes+amortizacion;
+        this.actualizarAmortizacion(amortizacion);
         this.actualizarCuotasTotales(cuota);
         return cuota;
     }

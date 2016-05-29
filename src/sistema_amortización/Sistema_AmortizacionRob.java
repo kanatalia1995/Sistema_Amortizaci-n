@@ -6,6 +6,11 @@
 package sistema_amortización;
 
 import Adaptadores.TipoCambio.AdaptadorBCCR;
+import Modelo.FabricaSistemaAmortizacion.CreadorAleman;
+import Modelo.FabricaSistemaAmortizacion.CreadorSistemaAmortizacion;
+import Modelo.SistemaAmortizacion.SistemaAmortizacion;
+import Utilidades.DTO;
+import Utilidades.Enumeraciones.TipoMoneda;
 import java.net.MalformedURLException;
 import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
@@ -39,8 +44,15 @@ public class Sistema_AmortizacionRob {
     public static void main(String[] args) {
         //AdaptadorBCCR adpta = new AdaptadorBCCR();
         
-        Modelo.SistemaAmortizacion.Aleman al = new Modelo.SistemaAmortizacion.Aleman(1000000,5,0.15,"colones");
+        /*DTO datos = new DTO();
+        datos.interesAnual=0.15;
+        datos.montoInicial = 1000000;
+        datos.periodos = 5;
+        datos.tipoMoneda = TipoMoneda.COLONES;
+        CreadorSistemaAmortizacion creador = new CreadorAleman();
+        SistemaAmortizacion tipo = creador.crearSistemaAmortizacion(datos);
+        System.out.print(tipo.calcularTablaAmortizacion());*/
+        Modelo.SistemaAmortizacion.Aleman al=new Modelo.SistemaAmortizacion.Aleman(1000000, 5, 0.15, "colones");
         System.out.println(al.calcularTablaAmortizacion());
-               
     }
 }
