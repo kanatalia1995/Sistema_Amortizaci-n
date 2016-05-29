@@ -26,31 +26,33 @@ public class AdaptadorChuky implements FechaHoraSistema {
     public String getFechaHora() {
         final String host = "localhost";
         final int portNumber = 8666;
-        System.out.println("Creating socket to '" + host + "' on port " + portNumber);
-        String userInput="";
+        //System.out.println("Creating socket to '" + host + "' on port " + portNumber);
+        //String userInput="";
+        String info="";
         while (true) {
             try {
                 Socket socket = new Socket(host, portNumber);
                 BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                //PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                info=br.readLine();
+                //System.out.println("server says:" + br.readLine());
                 
-                System.out.println("server says:" + br.readLine());
+                //BufferedReader userInputBR = new BufferedReader(new InputStreamReader(System.in));
+                //userInput = userInputBR.readLine();
                 
-                BufferedReader userInputBR = new BufferedReader(new InputStreamReader(System.in));
-                userInput = userInputBR.readLine();
+                //out.println(userInput);
                 
-                out.println(userInput);
+                //System.out.println("server says:" + br.readLine());
                 
-                System.out.println("server says:" + br.readLine());
-                
-                if ("exit".equalsIgnoreCase(userInput)) {
+                /*if ("exit".equalsIgnoreCase(userInput)) {
                     socket.close();
                     break;
-                }
+                }*/
+                break;
             } catch (IOException ex) {
                 Logger.getLogger(AdaptadorChuky.class.getName()).log(Level.SEVERE, null, ex);
             }
-	}return userInput;
+	}return info;
     }
   
 }

@@ -9,6 +9,7 @@ Roberto Ortiz Salazar
 
 package Modelo.SistemaAmortizacion;
 
+import Adaptadores.FechaHoraSistema.AdaptadorChuky;
 import Adaptadores.TipoCambio.AdaptadorBCCR;
 
 public class Frances extends SistemaAmortizacion{
@@ -33,7 +34,7 @@ public class Frances extends SistemaAmortizacion{
             String cuota=String.valueOf(calcularCuota(this.getMontoInicial()));
             tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";             
         }
-        tablaAmortizacion+="Total\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales());
+        tablaAmortizacion+="Total\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n\n\n";
         return tablaAmortizacion;
     }
 
@@ -74,6 +75,13 @@ public class Frances extends SistemaAmortizacion{
         info+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
         info+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
         info+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
+        return info;
+    }
+    
+    public String contactarChucky(){
+        String info="";
+        AdaptadorChuky adp =  new AdaptadorChuky();
+        System.out.println(adp.getFechaHora());
         return info;
     }
 }
