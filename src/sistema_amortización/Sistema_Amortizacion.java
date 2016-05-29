@@ -43,8 +43,10 @@ public class Sistema_Amortizacion {
     public static void main(String[] args) {
         /*AdaptadorBCCR adpta = new AdaptadorBCCR();
         System.out.print(adpta.getTipoCambio());*/
-        VistaConsola vc = new VistaConsola();
-        vc.menuConsola();
+        /*VistaConsola vc = new VistaConsola();
+        vc.menuConsola();*/
+        Modelo.SistemaAmortizacion.Frances fr = new Modelo.SistemaAmortizacion.Frances(1000000,5,0.15,"colones");
+        System.out.print(fr.calcularTablaAmortizacion());
     }
     
 }
