@@ -26,7 +26,6 @@ public class AdaptadorChuky implements FechaHoraSistema {
     public String getFechaHora() {
         final String host = "localhost";
         final int portNumber = 8666;
-        System.out.println("Creating socket to '" + host + "' on port " + portNumber);
         String userInput="";
         while (true) {
             try {
@@ -34,14 +33,12 @@ public class AdaptadorChuky implements FechaHoraSistema {
                 BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 
-                System.out.println("server says:" + br.readLine());
                 
                 BufferedReader userInputBR = new BufferedReader(new InputStreamReader(System.in));
                 userInput = userInputBR.readLine();
                 
                 out.println(userInput);
                 
-                System.out.println("server says:" + br.readLine());
                 
                 if ("exit".equalsIgnoreCase(userInput)) {
                     socket.close();
