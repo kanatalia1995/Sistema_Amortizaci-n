@@ -69,6 +69,7 @@ public class ControladorSistemaAmortizacion {
         this.sistemaActual = this.cliente.crearAmortizacion(creador,datos);
     }
     
+    private double convertidorColonesDolares(SistemaAmortizacion pSistema){
         double montoCompra=this.tipoCambio.getTipoCambio();
         double deudaInicial=pSistema.getMontoInicial();
         return deudaInicial*montoCompra;
