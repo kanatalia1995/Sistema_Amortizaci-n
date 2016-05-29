@@ -70,11 +70,13 @@ public class VistaConsola{
             // mostrar los de consulta;
             if (datos!=null){
                  controlador.crearClienteSistema(datos);
+                 //Mostrar datos obtenidos del controlador.
+                 System.out.print("\n");
                  System.out.print(controlador.obtenerTipoCambioCompra());
                  System.out.print(controlador.obtenerInformacionAmortizacion());
                  //System.out.print(controlador.obtenerfechaHoraSistema());
             }
-            System.out.print("¿Desea realizar otra consulta?(1=Si,0=No)");
+            System.out.print("\n\n¿Desea realizar otra consulta?(1=Si,0=No)");
             
             //Procesa  respuesta 
             Scanner lectura = new Scanner(System.in);

@@ -40,7 +40,7 @@ public class Sistema_AmortizacionRob {
         AdaptadorBCCR adpta = new AdaptadorBCCR();
         
         Modelo.SistemaAmortizacion.Frances fr = new Modelo.SistemaAmortizacion.Frances(1000000,5,0.15,"colones");
-        System.out.println(fr.calcularTablaAmortizacion());
+        System.out.println(fr.contactarChucky());
                
     }
 }
