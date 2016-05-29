@@ -31,7 +31,6 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
 
     public SistemaAmortizacion(double pMontoInicial, int pPeriodos, Double pInteresAnual, String pTipoMoneda) {
         this.montoInicial = pMontoInicial;
-        this.deudaActual=pMontoInicial;
         this.periodos = pPeriodos;
         this.interesAnual = pInteresAnual;
         this.tipoMoneda = pTipoMoneda;
@@ -59,7 +58,7 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     
     public void actualizarAmortizacion(double pAmortizacion){
         this.amortizacion+=pAmortizacion;
-        this.actualizarDeudaActual(this.amortizacion);
+        this.actualizarDeudaActual(pAmortizacion);
     }
     
     public  void actualizarCuotasTotales(double pCuota){

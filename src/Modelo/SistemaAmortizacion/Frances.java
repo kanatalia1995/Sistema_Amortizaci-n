@@ -28,7 +28,7 @@ public class Frances extends SistemaAmortizacion{
         tablaAmortizacion+="Roberto";//this.getCliente().toString()+"\n";
         tablaAmortizacion+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
         tablaAmortizacion+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
-        tablaAmortizacion+="Interés Anual: "+String.valueOf(this.getInteresAnual()/* *100 en caso de que guardemos el interes como 0.15*/)+" %\n";
+        tablaAmortizacion+="Interés Anual: "+String.valueOf(this.getInteresAnual()*100)+"%\n";
         tablaAmortizacion+="Sistema de amortización: Francés\n";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
         tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
@@ -53,13 +53,14 @@ public class Frances extends SistemaAmortizacion{
         Double resultado=cuota-interes;
         this.actualizarAmortizacion(resultado);
         return resultado;
+        
     }
 
     @Override
     public double calcularCuota(double pCuentaInicial) {
         Double cuota;
         Double interes=this.getInteresAnual();
-        Double periodo=(double) this.getPeriodos();
+        Double periodo=(double)this.getPeriodos();
         Double monto=this.getMontoInicial();
         cuota=(interes/(1-(1/(Math.pow((1+interes),periodo)))))*monto;
         this.actualizarCuotasTotales(cuota);
