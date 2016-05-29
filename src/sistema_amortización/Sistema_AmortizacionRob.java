@@ -52,7 +52,7 @@ public class Sistema_AmortizacionRob {
         CreadorSistemaAmortizacion creador = new CreadorAleman();
         SistemaAmortizacion tipo = creador.crearSistemaAmortizacion(datos);
         System.out.print(tipo.calcularTablaAmortizacion());*/
-        Modelo.SistemaAmortizacion.Americano al=new Modelo.SistemaAmortizacion.Americano(1000000, 5, 0.15, "colones");
+        Modelo.SistemaAmortizacion.Aleman al=new Modelo.SistemaAmortizacion.Aleman(1000000, 5, 0.15, "colones");
         System.out.println(al.calcularTablaAmortizacion());
     }
 }

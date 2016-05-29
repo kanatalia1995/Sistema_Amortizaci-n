@@ -9,6 +9,7 @@ Roberto Ortiz Salazar
 
 package Modelo.SistemaAmortizacion;
 
+import java.text.DecimalFormat;
 
 public class Aleman extends SistemaAmortizacion {
     
@@ -22,18 +23,22 @@ public class Aleman extends SistemaAmortizacion {
     //Métodos de calculos de amortización
     @Override
     public String calcularTablaAmortizacion() {
+        
+        //Le da el formato de dos decimales a lo numeros que vamos a usar
+        DecimalFormat formato = new DecimalFormat("0.00");
+        
         String tablaAmortizacion="Sistema de amortización: Alemán\n";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
         tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
         
         for (int i=1;i<=this.getPeriodos();i++){
-            String montoActual=String.valueOf(this.getDeudaActual());
-            String interesActual=String.valueOf(this.calcularInteres());
-            String amortizacionActual=String.valueOf(calcularAmortizacion(this.getMontoInicial()));
-            String cuota=String.valueOf(calcularCuota(this.getMontoInicial()));
+            String montoActual=String.valueOf(formato.format(this.getDeudaActual()));
+            String interesActual=String.valueOf(formato.format(this.calcularInteres()));
+            String amortizacionActual=String.valueOf(formato.format(calcularAmortizacion(this.getMontoInicial())));
+            String cuota=String.valueOf(formato.format(calcularCuota(this.getMontoInicial())));
             tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";             
         }
-        tablaAmortizacion+="Total\t\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n\n\n";
+        tablaAmortizacion+="Total\t\t\t"+String.valueOf(formato.format(this.getInteresTotal()))+"\t"+String.valueOf(formato.format(this.getAmortizacion()))+"\t"+String.valueOf(formato.format(this.getCuotasTotales()))+"\n\n\n";
         return tablaAmortizacion;
     }
 

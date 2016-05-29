@@ -9,6 +9,7 @@ Roberto Ortiz Salazar
 
 package Modelo.SistemaAmortizacion;
 
+import java.text.DecimalFormat;
 
 public class Americano extends SistemaAmortizacion {
 
@@ -21,22 +22,26 @@ public class Americano extends SistemaAmortizacion {
     // Métodos para calcular la amortización 
     @Override
     public String calcularTablaAmortizacion() {
+        
+        //Le da el formato de dos decimales a lo numeros que vamos a usar
+        DecimalFormat formato = new DecimalFormat("0.00");
+        
         String tablaAmortizacion="Sistema de amortización: Americano\n";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
         tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
         
         for (int i=1;i<this.getPeriodos();i++){
-            String montoActual=String.valueOf(this.getDeudaActual());
-            String interesActual=String.valueOf(this.calcularInteres());
-            String amortizacionActual=String.valueOf(calcularAmortizacion(0.0));
-            String cuota=String.valueOf(calcularCuota(i));
+            String montoActual=String.valueOf(formato.format(this.getDeudaActual()));
+            String interesActual=String.valueOf(formato.format(this.calcularInteres()));
+            String amortizacionActual=String.valueOf(formato.format(calcularAmortizacion(0.0)));
+            String cuota=String.valueOf(formato.format(calcularCuota(i)));
             tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";
         }
         //Ultimos linea de la tabla
-        String montoActual=String.valueOf(this.getDeudaActual());
-        String interesActual=String.valueOf(this.calcularInteres());
-        String amortizacionActual=String.valueOf(calcularAmortizacion(this.getMontoInicial()));
-        String cuota=String.valueOf(calcularCuota(this.getPeriodos()));
+        String montoActual=String.valueOf(formato.format(this.getDeudaActual()));
+        String interesActual=String.valueOf(formato.format(this.calcularInteres()));
+        String amortizacionActual=String.valueOf(formato.format(calcularAmortizacion(this.getMontoInicial())));
+        String cuota=String.valueOf(formato.format(calcularCuota(this.getPeriodos())));
         tablaAmortizacion+=String.valueOf(this.getPeriodos())+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";
         
         //Montos totales
@@ -62,11 +67,9 @@ public class Americano extends SistemaAmortizacion {
         Double cuota;
         if (validar(pCuentaInicial)){
             cuota=this.getMontoInicial()+this.calcularInteres();
-            //this.actualizarCuotasTotales(cuota);
             return cuota;
         }else{
             cuota=this.calcularInteres();
-            //this.actualizarCuotasTotales(cuota);
             return cuota;
         }
         
