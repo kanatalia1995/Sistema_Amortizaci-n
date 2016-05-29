@@ -9,6 +9,7 @@ Roberto Ortiz Salazar
 
 package Modelo.SistemaAmortizacion;
 
+import Adaptadores.TipoCambio.AdaptadorBCCR;
 
 public class Frances extends SistemaAmortizacion{
 
@@ -21,7 +22,14 @@ public class Frances extends SistemaAmortizacion{
     // Métodos de calculo de Amortización
     @Override
     public String calcularTablaAmortizacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        AdaptadorBCCR adpta = new AdaptadorBCCR();
+        String tablaAmortizacion="Tipo de cambio compra BCCR: "+String.valueOf(adpta.getTipoCambio());
+        tablaAmortizacion+="\nDatos de la consulta:\n";
+        tablaAmortizacion+=this.getCliente().toString()+"\n";
+        tablaAmortizacion+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
+        tablaAmortizacion+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
+        tablaAmortizacion+="Interés Anual: "+String.valueOf(this.getInteresAnual()/* *100 en caso de que guardemos el interes como 0.15*/)+" %\n";
+        tablaAmortizacion+=
     }
 
     @Override

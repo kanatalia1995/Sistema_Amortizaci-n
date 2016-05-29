@@ -87,5 +87,29 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     public int getPeriodos() {
         return periodos;
     }
+
+    public String getTipoMoneda() {
+        return tipoMoneda;
+    }
+
+    public double getDeudaActual() {
+        return deudaActual;
+    }
+
+    public double getInteresTotal() {
+        return interesTotal;
+    }
+
+    public double getAmortizacion() {
+        return amortizacion;
+    }
+
+    public double getCuotasTotales() {
+        return cuotasTotales;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
     
 }
