@@ -57,6 +57,7 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     // Métodos abstractos de la clase
     
     public abstract String calcularTablaAmortizacion();
+    public abstract String obtenerInformacion();
     
     //Métodos de actualizaciones de variables
     

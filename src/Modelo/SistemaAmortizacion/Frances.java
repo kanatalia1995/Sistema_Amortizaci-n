@@ -23,9 +23,9 @@ public class Frances extends SistemaAmortizacion{
     // Métodos de calculo de Amortización
     @Override
     public String calcularTablaAmortizacion() {
-        String tablaAmortizacion="Sistema de amortización: Francés\n";
+        String tablaAmortizacion="";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
-        tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
+        tablaAmortizacion+="\nPeriodo\tDeuda Inicial    \tIntereses   \tAmortizacion   \tCuota  \n\n";
         
         for (int i=1;i<=this.getPeriodos();i++){
             String montoActual=String.valueOf(this.getDeudaActual());
@@ -75,6 +75,7 @@ public class Frances extends SistemaAmortizacion{
         info+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
         info+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
         info+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
+        info+="Sistema de amortización: Francés\n";
         return info;
     }
     

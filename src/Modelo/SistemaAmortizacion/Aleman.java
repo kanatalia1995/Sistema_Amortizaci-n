@@ -54,6 +54,11 @@ public class Aleman extends SistemaAmortizacion {
         this.actualizarCuotasTotales(cuota);
         return cuota;
     }
+
+    @Override
+    public String obtenerInformacion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
