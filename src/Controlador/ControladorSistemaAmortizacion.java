@@ -69,10 +69,24 @@ public class ControladorSistemaAmortizacion {
         this.sistemaActual = this.cliente.crearAmortizacion(creador,datos);
     }
     
-    private double convertidorColonesDolares(SistemaAmortizacion pSistema){
-        double montoCompra=this.tipoCambio.getTipoCambio();
-        double deudaInicial=pSistema.getMontoInicial();
-        return deudaInicial*montoCompra;
+    private boolean verificarMoneda(String pMoneda){
+        if (pMoneda.toLowerCase()=="dolares"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    private void convertidorColonesDolares(DTO datos){
+        String moneda=String.valueOf(datos.tipoMoneda);
+        double deudaInicial=datos.montoInicial;
+        if (verificarMoneda(moneda)){
+            double montoCompra=this.tipoCambio.getTipoCambio();
+            double conversion=deudaInicial*montoCompra;
+            datos.montoInicial=conversion;
+        }else{
+            datos.montoInicial=deudaInicial;
+        }
     }
     
     private CreadorSistemaAmortizacion obtenerCreador(TipoSistema tipoSistema){

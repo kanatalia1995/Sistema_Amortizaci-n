@@ -67,11 +67,11 @@ public class Frances extends SistemaAmortizacion{
         return cuota;
     }
     
-    public String obtenerTipoCompra(){
+    /*public String obtenerTipoCompra(){
         AdaptadorBCCR adpta = new AdaptadorBCCR();
         String tipoCompra="Tipo de cambio compra BCCR: "+String.valueOf(adpta.getTipoCambio());
         return tipoCompra;
-    }
+    }*/
     
     public String obtenerInformacion(){
         String info="";
@@ -84,10 +84,10 @@ public class Frances extends SistemaAmortizacion{
         return info;
     }
     
-    public String contactarChucky(){
+    /*public String contactarChucky(){
         String info="";
         AdaptadorChuky adp =  new AdaptadorChuky();
         System.out.println(adp.getFechaHora());
         return info;
-    }
+    }*/
 }
