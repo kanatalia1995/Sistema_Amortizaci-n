@@ -41,14 +41,18 @@ public class ControladorSistemaAmortizacion {
      
     //Métodos públicos para obtener información
     public String obtenerInformacionAmortizacion() {  
-        return this.sistemaActual.calcularTablaAmortizacion();
+        String respuesta = this.sistemaActual.obtenerInformacion();
+        respuesta+= this.sistemaActual.calcularTablaAmortizacion();
+        return respuesta;
     }
     
     public String obtenerTipoCambioCompra(){
-        return String.valueOf(this.tipoCambio.getTipoCambio()); 
+        String tipoCompra="Tipo de cambio compra BCCR: "+String.valueOf(this.tipoCambio.getTipoCambio());
+        return tipoCompra; 
     }
     
     public String obtenerfechaHoraSistema(){
+        
          return this.fechaHora.getFechaHora();
     }
 

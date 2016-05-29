@@ -34,6 +34,11 @@ public class Aleman extends SistemaAmortizacion {
     public double calcularCuota(double pCuentaInicial) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public String obtenerInformacion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

@@ -36,18 +36,20 @@ public class VistaConsola{
             datos.periodos = Integer.parseInt(user_input.nextLine());
             
             System.out.print("Ingrese el interés anual: ");
-            datos.interesAnual = Double.parseDouble(user_input.nextLine());
+            double interes= Double.parseDouble(user_input.nextLine());
+            datos.interesAnual = DTO.convertirPorcentaje(interes);
             
             String tipoAmortizacion;
             System.out.print("Ingrese el sistema de amortización: ");
             tipoAmortizacion = user_input.nextLine();
             datos.tipoSistema = TipoSistema.valueOf(tipoAmortizacion.toUpperCase());
             
+            
             String tipoMoneda;
             System.out.print("Ingrese el tipo de moneda: ");
             tipoMoneda = user_input.nextLine();
             datos.tipoMoneda = TipoMoneda.valueOf(tipoMoneda.toUpperCase());
-            
+             
             return datos;
             
         }catch (Exception e){
@@ -59,6 +61,7 @@ public class VistaConsola{
         
         // Datos del controlador
         FechaHoraSistema fechaHora =  new AdaptadorChuky();
+        //System.out.print(fechaHora.getFechaHora());
         TipoCambio cambio = new AdaptadorBCCR();
         ControladorSistemaAmortizacion controlador = new ControladorSistemaAmortizacion(fechaHora,cambio);
         boolean salida = true;
@@ -69,7 +72,7 @@ public class VistaConsola{
                  controlador.crearClienteSistema(datos);
                  System.out.print(controlador.obtenerTipoCambioCompra());
                  System.out.print(controlador.obtenerInformacionAmortizacion());
-                 System.out.print(controlador.obtenerfechaHoraSistema());
+                 //System.out.print(controlador.obtenerfechaHoraSistema());
             }
             System.out.print("¿Desea realizar otra consulta?(1=Si,0=No)");
             

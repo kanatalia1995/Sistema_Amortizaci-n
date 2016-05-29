@@ -17,4 +17,19 @@ public class DTO {
     public double interesAnual;
     public TipoMoneda tipoMoneda;
     public TipoSistema tipoSistema;
+    
+    @Override
+    public String toString(){
+        String respuesta = "\nNombreCompleto = "+ this.nombreCompleto;
+        respuesta+= "\n Monto Inicial = "+ String.valueOf(montoInicial);
+        respuesta+= "\n periodos  = "+ String.valueOf(periodos);
+        respuesta+= "\n InteresAnual = "+ String.valueOf(interesAnual);
+        respuesta+= "\n TipoMoneda= "+ String.valueOf(tipoMoneda);
+        respuesta+= "\n TipoSistema= "+ String.valueOf(tipoSistema);
+        return respuesta;
+    }
+    
+    public static  double convertirPorcentaje(double porcentaje){
+        return (double)(porcentaje/100);
+    }
 }
