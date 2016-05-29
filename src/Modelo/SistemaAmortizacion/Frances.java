@@ -22,14 +22,7 @@ public class Frances extends SistemaAmortizacion{
     // Métodos de calculo de Amortización
     @Override
     public String calcularTablaAmortizacion() {
-        AdaptadorBCCR adpta = new AdaptadorBCCR();
-        String tablaAmortizacion="Tipo de cambio compra BCCR: "+String.valueOf(adpta.getTipoCambio());
-        tablaAmortizacion+="\nDatos de la consulta:\n";
-        tablaAmortizacion+="Roberto\n";//this.getCliente().toString()+"\n";
-        tablaAmortizacion+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
-        tablaAmortizacion+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
-        tablaAmortizacion+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
-        tablaAmortizacion+="Sistema de amortización: Francés\n";
+        String tablaAmortizacion="Sistema de amortización: Francés\n";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
         tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
         
@@ -68,4 +61,19 @@ public class Frances extends SistemaAmortizacion{
         return cuota;
     }
     
+    public String obtenerTipoCompra(){
+        AdaptadorBCCR adpta = new AdaptadorBCCR();
+        String tipoCompra="Tipo de cambio compra BCCR: "+String.valueOf(adpta.getTipoCambio());
+        return tipoCompra;
+    }
+    
+    public String obtenerInformacion(){
+        String info="";
+        info+="\nDatos de la consulta:\n";
+        info+=this.getCliente().toString()+"\n";
+        info+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
+        info+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
+        info+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
+        return info;
+    }
 }
