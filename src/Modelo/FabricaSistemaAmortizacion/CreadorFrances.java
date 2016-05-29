@@ -8,6 +8,7 @@ Roberto Ortiz Salazar
 */
 package Modelo.FabricaSistemaAmortizacion;
 
+import Modelo.SistemaAmortizacion.Frances;
 import Modelo.SistemaAmortizacion.SistemaAmortizacion;
 import Utilidades.DTO;
 
@@ -20,7 +21,7 @@ public class CreadorFrances implements CreadorSistemaAmortizacion {
     //Creador
     @Override
     public SistemaAmortizacion crearSistemaAmortizacion(DTO pDatos) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Frances(pDatos.montoInicial,pDatos.periodos,pDatos.interesAnual,pDatos.tipoMoneda.toString());
     }
     
 }

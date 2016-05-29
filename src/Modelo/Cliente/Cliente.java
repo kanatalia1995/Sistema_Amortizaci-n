@@ -9,7 +9,9 @@ Roberto Ortiz Salazar
 
 package Modelo.Cliente;
 //Librerías y paquetes utilizados
+import Modelo.FabricaSistemaAmortizacion.CreadorSistemaAmortizacion;
 import Modelo.SistemaAmortizacion.*;
+import Utilidades.DTO;
 
 public abstract class Cliente {
 
@@ -23,9 +25,16 @@ public abstract class Cliente {
     //Métodos abstractos
     public abstract String toString();
     
-    
+    // Crea el sistema deseado
+    public SistemaAmortizacion crearAmortizacion(CreadorSistemaAmortizacion pCreador, DTO pDatos){
+        SistemaAmortizacion sistema = pCreador.crearSistemaAmortizacion(pDatos);
+        this.asociarClienteSistemaAmortizacion(sistema);
+        return sistema;
+    }
     //Métodos Privados
+    
+    //Asocia el cliente con el nuevo sistema creado;
     private void asociarClienteSistemaAmortizacion(SistemaAmortizacion pSistema){
-        
+        pSistema.setCliente(this);
     }
 }

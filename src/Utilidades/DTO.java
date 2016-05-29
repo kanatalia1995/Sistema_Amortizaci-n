@@ -8,7 +8,13 @@ Roberto Ortiz Salazar
 */
 package Utilidades;
 
+import Utilidades.Enumeraciones.*;
 
 public class DTO {
-    
+    public String nombreCompleto;
+    public double montoInicial;
+    public int periodos;
+    public double interesAnual;
+    public TipoMoneda tipoMoneda;
+    public TipoSistema tipoSistema;
 }

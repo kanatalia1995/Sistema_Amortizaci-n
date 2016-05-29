@@ -19,7 +19,7 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     
     private double montoInicial;
     private int periodos;
-    private Double interesAnual;
+    private double interesAnual;
     private String tipoMoneda;
     private double deudaActual;
     private double interesTotal;
@@ -41,11 +41,12 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     
     
     public String toString(){
-        return "";
+        String respuesta = String.valueOf(this.interesAnual)+String.valueOf(this.montoInicial)+String.valueOf(this.interesAnual)+String.valueOf(this.periodos);
+        return respuesta;
     }
     
-    public  double calcularInteres(){
-        return 0.0;
+    public double calcularInteres(){
+        return this.deudaActual*this.interesAnual;
     }
     
     // Métodos abstractos de la clase
@@ -55,21 +56,61 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     //Métodos de actualizaciones de variables
     
     private void actualizarAmortizacion(double pAmortizacion){
+        this.amortizacion+=pAmortizacion;
     }
     
     private  void actualizarCuotasTotales(double pCuota){
+        this.cuotasTotales+=pCuota;
     }
     
     private void actualizarMontoInteres(double pMontoInteres){
+        this.interesTotal+=pMontoInteres;
     }
     
     private  void actualizarDeudaActual(double pMonto){
+        this.deudaActual-=pMonto;
     }
     
     //Métodos de acceso a atributos
     
     public void  setCliente(Cliente pCliente){
         this.cliente = pCliente;
+    }
+
+    public Double getInteresAnual() {
+        return interesAnual;
+    }
+
+    public double getMontoInicial() {
+        return montoInicial;
+    }
+
+    public int getPeriodos() {
+        return periodos;
+    }
+
+    public String getTipoMoneda() {
+        return tipoMoneda;
+    }
+
+    public double getDeudaActual() {
+        return deudaActual;
+    }
+
+    public double getInteresTotal() {
+        return interesTotal;
+    }
+
+    public double getAmortizacion() {
+        return amortizacion;
+    }
+
+    public double getCuotasTotales() {
+        return cuotasTotales;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
     }
     
 }

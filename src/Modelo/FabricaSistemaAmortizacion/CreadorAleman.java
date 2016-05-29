@@ -8,6 +8,7 @@ Roberto Ortiz Salazar
 */
 package Modelo.FabricaSistemaAmortizacion;
 
+import Modelo.SistemaAmortizacion.Aleman;
 import Modelo.SistemaAmortizacion.SistemaAmortizacion;
 import Utilidades.DTO;
 
@@ -21,8 +22,9 @@ public class CreadorAleman implements CreadorSistemaAmortizacion {
     
     @Override
     public SistemaAmortizacion crearSistemaAmortizacion(DTO pDatos) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Aleman(pDatos.montoInicial,pDatos.periodos,pDatos.interesAnual,pDatos.tipoMoneda.toString());
     }
+    // Contructor = double pMontoInicial, int pPeriodos, Double pInteresAnual, String pTipoMoneda
     
     
 }
