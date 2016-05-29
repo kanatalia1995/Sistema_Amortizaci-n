@@ -68,6 +68,12 @@ public class ControladorSistemaAmortizacion {
         CreadorSistemaAmortizacion creador = this.obtenerCreador(datos.tipoSistema);
         this.sistemaActual = this.cliente.crearAmortizacion(creador,datos);
     }
+    
+        double montoCompra=this.tipoCambio.getTipoCambio();
+        double deudaInicial=pSistema.getMontoInicial();
+        return deudaInicial*montoCompra;
+    }
+    
     private CreadorSistemaAmortizacion obtenerCreador(TipoSistema tipoSistema){
         switch(tipoSistema){
             case ALEMAN: return new CreadorAleman();
