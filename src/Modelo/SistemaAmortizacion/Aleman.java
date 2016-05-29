@@ -33,7 +33,7 @@ public class Aleman extends SistemaAmortizacion {
             String cuota=String.valueOf(calcularCuota(this.getMontoInicial()));
             tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";             
         }
-        tablaAmortizacion+="Total\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n\n\n";
+        tablaAmortizacion+="Total\t\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n\n\n";
         return tablaAmortizacion;
     }
 
@@ -56,7 +56,14 @@ public class Aleman extends SistemaAmortizacion {
 
     @Override
     public String obtenerInformacion() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String info="";
+        info+="\nDatos de la consulta:\n";
+        info+=this.getCliente().toString()+"\n";
+        info+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
+        info+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
+        info+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
+        info+="Sistema de amortización: Alemán\n";
+        return info;
     }
     
     
