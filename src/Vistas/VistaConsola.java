@@ -20,27 +20,27 @@ public class VistaConsola{
             
             String nombre;
             System.out.print("Ingrese su nombre: ");
-            user_input.next();
+            nombre = user_input.nextLine();
             
-            Double montoInicial;
+            double montoInicial;
             System.out.print("Ingrese el monto del préstamo: ");
-            Double.parseDouble(user_input.next());
+            montoInicial = Double.parseDouble(user_input.nextLine());
             
-            Integer periodos;
+            int periodos;
             System.out.print("Ingrese el período total en años: ");
-            Integer.parseInt(user_input.next());
+            periodos = Integer.parseInt(user_input.nextLine());
             
-            Double interesAnual;
+            double interesAnual;
             System.out.print("Ingrese el interés anual: ");
-            Double.parseDouble(user_input.next());
+            interesAnual = Double.parseDouble(user_input.nextLine());
             
             String tipoAmortizacion;
             System.out.print("Ingrese el monto del préstamo: ");
-            user_input.next();
+            tipoAmortizacion = user_input.nextLine();
             
             String tipoMoneda;
             System.out.print("Ingrese el tipo de moneda: ");
-            user_input.next();
+            tipoMoneda = user_input.nextLine();
         }
     }
 }

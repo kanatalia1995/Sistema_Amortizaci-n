@@ -46,7 +46,9 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     }
     
     public double calcularInteres(){
-        return this.deudaActual*this.interesAnual;
+        Double interes=this.deudaActual*this.interesAnual;
+        this.actualizarMontoInteres(interes);
+        return interes;
     }
     
     // Métodos abstractos de la clase
@@ -55,19 +57,20 @@ public  abstract class SistemaAmortizacion implements calculoCuotas{
     
     //Métodos de actualizaciones de variables
     
-    private void actualizarAmortizacion(double pAmortizacion){
+    public void actualizarAmortizacion(double pAmortizacion){
         this.amortizacion+=pAmortizacion;
+        this.actualizarDeudaActual(pAmortizacion);
     }
     
-    private  void actualizarCuotasTotales(double pCuota){
+    public  void actualizarCuotasTotales(double pCuota){
         this.cuotasTotales+=pCuota;
     }
     
-    private void actualizarMontoInteres(double pMontoInteres){
+    public void actualizarMontoInteres(double pMontoInteres){
         this.interesTotal+=pMontoInteres;
     }
     
-    private  void actualizarDeudaActual(double pMonto){
+    public  void actualizarDeudaActual(double pMonto){
         this.deudaActual-=pMonto;
     }
     

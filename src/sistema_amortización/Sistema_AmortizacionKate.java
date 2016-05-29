@@ -54,8 +54,10 @@ public class Sistema_AmortizacionKate {
         datos.tipoMoneda = TipoMoneda.COLONES;
          CreadorSistemaAmortizacion creador = new CreadorAleman();
          SistemaAmortizacion tipo = creador.crearSistemaAmortizacion(datos);
-         System.out.print(tipo);
+         //System.out.print(tipo);
         
+         VistaConsola consola = new VistaConsola();
+         consola.menuConsola();
         
     }
     
