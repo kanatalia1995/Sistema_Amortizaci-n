@@ -14,7 +14,7 @@ public class Fisico extends Cliente  {
     private String nombreCompleto;
     
     //Constructores de la clase
-    Fisico(String pNombreCompleto ){
+    public Fisico(String pNombreCompleto ){
         this.nombreCompleto = pNombreCompleto;
     }
     

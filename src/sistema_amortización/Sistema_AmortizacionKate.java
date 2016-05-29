@@ -52,12 +52,15 @@ public class Sistema_AmortizacionKate {
         datos.montoInicial = 30000;
         datos.periodos = 5;
         datos.tipoMoneda = TipoMoneda.COLONES;
-         CreadorSistemaAmortizacion creador = new CreadorAleman();
+         CreadorSistemaAmortizacion creador = new CreadorFrances();
          SistemaAmortizacion tipo = creador.crearSistemaAmortizacion(datos);
-         //System.out.print(tipo);
+         System.out.print(tipo.calcularTablaAmortizacion());
+     
+         //VistaConsola consola = new VistaConsola();
+         //consola.menuConsola();
+         
+         
         
-         VistaConsola consola = new VistaConsola();
-         consola.menuConsola();
         
     }
     
