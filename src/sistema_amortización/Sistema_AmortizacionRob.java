@@ -37,10 +37,10 @@ public class Sistema_AmortizacionRob {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        AdaptadorBCCR adpta = new AdaptadorBCCR();
+        //AdaptadorBCCR adpta = new AdaptadorBCCR();
         
-        Modelo.SistemaAmortizacion.Frances fr = new Modelo.SistemaAmortizacion.Frances(1000000,5,0.15,"colones");
-        System.out.println(fr.contactarChucky());
+        Modelo.SistemaAmortizacion.Aleman al = new Modelo.SistemaAmortizacion.Aleman(1000000,5,0.15,"colones");
+        System.out.println(al.calcularTablaAmortizacion());
                
     }
 }
