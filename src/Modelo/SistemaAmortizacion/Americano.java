@@ -26,7 +26,7 @@ public class Americano extends SistemaAmortizacion {
         //Le da el formato de dos decimales a lo numeros que vamos a usar
         DecimalFormat formato = new DecimalFormat("0.00");
         
-        String tablaAmortizacion="Sistema de amortización: Americano\n";
+        String tablaAmortizacion="";
         tablaAmortizacion+="\nTabla de Amortizacion:\n";
         tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
         
@@ -45,7 +45,7 @@ public class Americano extends SistemaAmortizacion {
         tablaAmortizacion+=String.valueOf(this.getPeriodos())+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";
         
         //Montos totales
-        tablaAmortizacion+="Total\t\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n\n\n";
+        tablaAmortizacion+="Total\t\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n";
         return tablaAmortizacion;
     }
 

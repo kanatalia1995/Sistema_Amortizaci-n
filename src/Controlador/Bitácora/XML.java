@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.URI;
+import java.text.DecimalFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
@@ -103,8 +104,9 @@ public class XML extends Bitacora {
             Element Cliente = document.createElement("Cliente");
             Cliente.setAttribute("Nombre",datos.nombreCompleto);
             
+            DecimalFormat decimales = new DecimalFormat("0.00");
             Element montoInicial= document.createElement("Monto_préstamo");
-            Text txtMontoInicial =document.createTextNode(String.valueOf(datos.montoInicial));
+            Text txtMontoInicial =document.createTextNode(decimales.format(datos.montoInicial));
             montoInicial.appendChild(txtMontoInicial);
             Cliente.appendChild(montoInicial);
             
@@ -114,7 +116,7 @@ public class XML extends Bitacora {
             Cliente.appendChild(periodo);
             
             Element tasaInteres = document.createElement("Tasa_Interés");
-            Text txtTasaInteres =document.createTextNode(String.valueOf(datos.interesAnual));
+            Text txtTasaInteres =document.createTextNode(String.valueOf(datos.interesAnual*100));
             tasaInteres.appendChild(txtTasaInteres);
             Cliente.appendChild(tasaInteres);
             

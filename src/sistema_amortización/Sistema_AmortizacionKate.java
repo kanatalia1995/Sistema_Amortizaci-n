@@ -50,13 +50,13 @@ public class Sistema_AmortizacionKate {
         datos.periodos = 5;
         datos.tipoMoneda = TipoMoneda.COLONES;
         Registro reg = new Registro();
-        Bitacora xml = new XML();
-        reg.agregarBitacora(xml);
+        Bitacora cvs = new CVS();
+        reg.agregarBitacora(cvs);
         reg.setRegistroActual(datos);
         
-        reg.setRegistroActual(datos);
+        //reg.setRegistroActual(datos);
         
-        
+       
      
          //VistaConsola consola = new VistaConsola();
          //consola.menuConsola();

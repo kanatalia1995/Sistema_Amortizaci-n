@@ -11,6 +11,7 @@ package Controlador;
 import Adaptadores.FechaHoraSistema.FechaHoraSistema;
 import Adaptadores.TipoCambio.TipoCambio;
 import Controlador.Bitácora.Bitacora;
+import Controlador.Bitácora.CVS;
 import Controlador.Bitácora.Registro;
 import Controlador.Bitácora.XML;
 import Modelo.Cliente.Cliente;
@@ -56,6 +57,7 @@ public class ControladorSistemaAmortizacion {
         return respuesta;
     }
     
+    
     public String obtenerTipoCambioCompra(){
         String tipoCompra="Tipo de cambio compra BCCR: "+String.valueOf(this.tipoCambio.getTipoCambio());
         return tipoCompra; 
@@ -100,6 +102,8 @@ public class ControladorSistemaAmortizacion {
     private void asignarBitacoras() {
         Bitacora xml = new XML();
         this.registro.agregarBitacora(xml);
+        Bitacora cvs = new CVS();
+        this.registro.agregarBitacora(cvs);
     }
 
     private void registrarDatos(DTO datos) {
