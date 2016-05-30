@@ -5,22 +5,16 @@
  */
 package sistema_amortización;
 
-import Adaptadores.FechaHoraSistema.AdaptadorChuky;
-import Adaptadores.TipoCambio.AdaptadorBCCR;
-import Modelo.FabricaSistemaAmortizacion.*;
-import Modelo.SistemaAmortizacion.Aleman;
-import Modelo.SistemaAmortizacion.SistemaAmortizacion;
 import Utilidades.DTO;
 import Utilidades.Enumeraciones.TipoMoneda;
-import Vistas.VistaConsola;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import Controlador.Bitácora.*;
 
 /**
  *
@@ -41,20 +35,28 @@ public class Sistema_AmortizacionKate {
         
         Document doc =  db.parse(pUrl.openStream());
         return doc;
-    }
+    } 
+    
+    
 
     /**
      * @param args the command line arguments
      */
+
     public static void main(String[] args) {
         DTO datos = new DTO();
         datos.interesAnual=2.0;
         datos.montoInicial = 30000;
         datos.periodos = 5;
         datos.tipoMoneda = TipoMoneda.COLONES;
-         CreadorSistemaAmortizacion creador = new CreadorFrances();
-         SistemaAmortizacion tipo = creador.crearSistemaAmortizacion(datos);
-         System.out.print(tipo.calcularTablaAmortizacion());
+        Registro reg = new Registro();
+        Bitacora xml = new XML();
+        reg.agregarBitacora(xml);
+        reg.setRegistroActual(datos);
+        
+        reg.setRegistroActual(datos);
+        
+        
      
          //VistaConsola consola = new VistaConsola();
          //consola.menuConsola();

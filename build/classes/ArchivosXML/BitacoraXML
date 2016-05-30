@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xml>
+   <Clientes>
+      <Cliente Nombre="">
+         <Monto_préstamo>30000.0</Monto_préstamo>
+         <Plazo>5</Plazo>
+         <Tasa_Interés>2.0</Tasa_Interés>
+         <Sistema_Amortización>null</Sistema_Amortización>
+         <Tipo_Moneda>COLONES</Tipo_Moneda>
+      </Cliente>
+   <Cliente Nombre="">
+         <Monto_préstamo>30000.0</Monto_préstamo>
+         <Plazo>5</Plazo>
+         <Tasa_Interés>2.0</Tasa_Interés>
+         <Sistema_Amortización>null</Sistema_Amortización>
+         <Tipo_Moneda>COLONES</Tipo_Moneda>
+      </Cliente>
+   <Cliente Nombre="">
+         <Monto_préstamo>30000.0</Monto_préstamo>
+         <Plazo>5</Plazo>
+         <Tasa_Interés>2.0</Tasa_Interés>
+         <Sistema_Amortización>null</Sistema_Amortización>
+         <Tipo_Moneda>COLONES</Tipo_Moneda>
+      </Cliente>
+   </Clientes>
+</xml>
+
