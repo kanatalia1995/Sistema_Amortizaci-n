@@ -69,6 +69,7 @@ public class ControladorSistemaAmortizacion {
         this.sistemaActual = this.cliente.crearAmortizacion(creador,datos);
     }
     
+    //Aqui kate!
     private boolean verificarMoneda(String pMoneda){
         if (pMoneda.toLowerCase()=="dolares"){
             return true;
