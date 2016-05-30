@@ -10,12 +10,16 @@ package Controlador;
 
 import Adaptadores.FechaHoraSistema.FechaHoraSistema;
 import Adaptadores.TipoCambio.TipoCambio;
+import Controlador.Bitácora.Bitacora;
+import Controlador.Bitácora.Registro;
+import Controlador.Bitácora.XML;
 import Modelo.Cliente.Cliente;
 import Modelo.Cliente.Fisico;
 import Modelo.FabricaSistemaAmortizacion.*;
 import Modelo.FabricaSistemaAmortizacion.CreadorSistemaAmortizacion;
 import Modelo.SistemaAmortizacion.SistemaAmortizacion;
 import Utilidades.DTO;
+import Utilidades.Enumeraciones.TipoMoneda;
 import Utilidades.Enumeraciones.TipoSistema;
 
 public class ControladorSistemaAmortizacion {
@@ -25,27 +29,23 @@ public class ControladorSistemaAmortizacion {
      private SistemaAmortizacion sistemaActual;
      private FechaHoraSistema fechaHora;
      private TipoCambio tipoCambio;
+     private Registro registro;
     
     //Contructores de la clase controlador
     public ControladorSistemaAmortizacion(FechaHoraSistema pFechaHora, TipoCambio pTipoCambio){
         this.fechaHora = pFechaHora;
         this.tipoCambio = pTipoCambio;
+        this.registro =  new Registro();
+        this.asignarBitacoras();
     }
      //Métodos para crear Cliente y Sistema
      public void crearClienteSistema(DTO datos){
+        if (verificarMoneda(datos.tipoMoneda)){
+            datos.montoInicial = this.convertidorColonesDolares(datos.montoInicial);
+        }
          this.crearCliente(datos.nombreCompleto);
          this.crearSistemaAlCliente(datos);
-         
-        //FALTA GUARDAR DATOS EN HISTÓRICOS!!!!!!!!
-        String moneda=String.valueOf(datos.tipoMoneda);
-        double deudaInicial=datos.montoInicial;
-        if (verificarMoneda(moneda)){
-            double montoCompra=this.tipoCambio.getTipoCambio();
-            double conversion=deudaInicial*montoCompra;
-            datos.montoInicial=conversion;
-        }else{
-            datos.montoInicial=deudaInicial;
-        }
+         this.registrarDatos(datos);
      }
      
      
@@ -79,15 +79,15 @@ public class ControladorSistemaAmortizacion {
         this.sistemaActual = this.cliente.crearAmortizacion(creador,datos);
     }
     
-    //Aqui kate!
-    private boolean verificarMoneda(String pMoneda){
-        if (pMoneda.toLowerCase()=="dolares"){
-            return true;
-        }else{
-            return false;
-        }
+    private boolean verificarMoneda(TipoMoneda pMoneda){
+         return TipoMoneda.DOLARES.equals(pMoneda);
     }
-        
+    
+    private double convertidorColonesDolares(Double pMontoInicial){
+            double montoCompra=this.tipoCambio.getTipoCambio();
+            return (pMontoInicial/montoCompra);   
+    }
+    
     private CreadorSistemaAmortizacion obtenerCreador(TipoSistema tipoSistema){
         switch(tipoSistema){
             case ALEMAN: return new CreadorAleman();
@@ -95,5 +95,14 @@ public class ControladorSistemaAmortizacion {
             case AMERICANO:  return new CreadorAmericano();
         }
         return null;
+    }
+
+    private void asignarBitacoras() {
+        Bitacora xml = new XML();
+        this.registro.agregarBitacora(xml);
+    }
+
+    private void registrarDatos(DTO datos) {
+        registro.setRegistroActual(datos);
     }
 }

@@ -36,6 +36,34 @@
          <Sistema_Amortización>null</Sistema_Amortización>
          <Tipo_Moneda>COLONES</Tipo_Moneda>
       </Cliente>
+   <Cliente Nombre="Katerine">
+         <Monto_préstamo>1880.7952002106488</Monto_préstamo>
+         <Plazo>5</Plazo>
+         <Tasa_Interés>0.15</Tasa_Interés>
+         <Sistema_Amortización>FRANCES</Sistema_Amortización>
+         <Tipo_Moneda>DOLARES</Tipo_Moneda>
+      </Cliente>
+   <Cliente Nombre="Katerine">
+         <Monto_préstamo>1880.7952002106488</Monto_préstamo>
+         <Plazo>5</Plazo>
+         <Tasa_Interés>0.15</Tasa_Interés>
+         <Sistema_Amortización>AMERICANO</Sistema_Amortización>
+         <Tipo_Moneda>DOLARES</Tipo_Moneda>
+      </Cliente>
+   <Cliente Nombre="Katerine">
+         <Monto_préstamo>1880.7952002106488</Monto_préstamo>
+         <Plazo>5</Plazo>
+         <Tasa_Interés>0.15</Tasa_Interés>
+         <Sistema_Amortización>ALEMAN</Sistema_Amortización>
+         <Tipo_Moneda>DOLARES</Tipo_Moneda>
+      </Cliente>
+   <Cliente Nombre="Katerine">
+         <Monto_préstamo>1000000.0</Monto_préstamo>
+         <Plazo>5</Plazo>
+         <Tasa_Interés>0.15</Tasa_Interés>
+         <Sistema_Amortización>ALEMAN</Sistema_Amortización>
+         <Tipo_Moneda>COLONES</Tipo_Moneda>
+      </Cliente>
    </Clientes>
 </xml>
 
