@@ -35,7 +35,17 @@ public class ControladorSistemaAmortizacion {
      public void crearClienteSistema(DTO datos){
          this.crearCliente(datos.nombreCompleto);
          this.crearSistemaAlCliente(datos);
+         
         //FALTA GUARDAR DATOS EN HISTÓRICOS!!!!!!!!
+        String moneda=String.valueOf(datos.tipoMoneda);
+        double deudaInicial=datos.montoInicial;
+        if (verificarMoneda(moneda)){
+            double montoCompra=this.tipoCambio.getTipoCambio();
+            double conversion=deudaInicial*montoCompra;
+            datos.montoInicial=conversion;
+        }else{
+            datos.montoInicial=deudaInicial;
+        }
      }
      
      
@@ -77,19 +87,7 @@ public class ControladorSistemaAmortizacion {
             return false;
         }
     }
-    
-    private void convertidorColonesDolares(DTO datos){
-        String moneda=String.valueOf(datos.tipoMoneda);
-        double deudaInicial=datos.montoInicial;
-        if (verificarMoneda(moneda)){
-            double montoCompra=this.tipoCambio.getTipoCambio();
-            double conversion=deudaInicial*montoCompra;
-            datos.montoInicial=conversion;
-        }else{
-            datos.montoInicial=deudaInicial;
-        }
-    }
-    
+        
     private CreadorSistemaAmortizacion obtenerCreador(TipoSistema tipoSistema){
         switch(tipoSistema){
             case ALEMAN: return new CreadorAleman();
