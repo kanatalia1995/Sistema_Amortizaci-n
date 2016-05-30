@@ -292,9 +292,13 @@ public class VistaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
+<<<<<<< HEAD
         // TODO add your handling code here:
         this.setVisible(false);
         dispose();
+=======
+        System.exit(0);
+>>>>>>> origin/master
     }//GEN-LAST:event_bCancelarActionPerformed
 
     private void bConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarActionPerformed
