@@ -40,12 +40,13 @@ public class Americano extends SistemaAmortizacion {
         //Ultimos linea de la tabla
         String montoActual=String.valueOf(formato.format(this.getDeudaActual()));
         String interesActual=String.valueOf(formato.format(this.calcularInteres()));
-        String amortizacionActual=String.valueOf(formato.format(calcularAmortizacion(this.getMontoInicial())));
         String cuota=String.valueOf(formato.format(calcularCuota(this.getPeriodos())));
+        String amortizacionActual=String.valueOf(formato.format(calcularAmortizacion(this.getMontoInicial())));
+        System.out.println(this.getDeudaActual());
         tablaAmortizacion+=String.valueOf(this.getPeriodos())+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";
         
         //Montos totales
-        tablaAmortizacion+="Total\t\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n";
+        tablaAmortizacion+="Total\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n";
         return tablaAmortizacion;
     }
 

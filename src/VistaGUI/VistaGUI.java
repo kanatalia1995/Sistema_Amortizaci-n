@@ -13,6 +13,8 @@ import Controlador.ControladorSistemaAmortizacion;
 import Utilidades.DTO;
 import Utilidades.Enumeraciones.TipoMoneda;
 import Utilidades.Enumeraciones.TipoSistema;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -291,6 +293,8 @@ public class VistaGUI extends javax.swing.JFrame {
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
+        dispose();
     }//GEN-LAST:event_bCancelarActionPerformed
 
     private void bConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarActionPerformed

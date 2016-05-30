@@ -38,7 +38,7 @@ public class Aleman extends SistemaAmortizacion {
             String cuota=String.valueOf(formato.format(calcularCuota(this.getMontoInicial())));
             tablaAmortizacion+=String.valueOf(i)+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";             
         }
-        tablaAmortizacion+="Total\t\t\t"+String.valueOf(formato.format(this.getInteresTotal()))+"\t"+String.valueOf(formato.format(this.getAmortizacion()))+"\t"+String.valueOf(formato.format(this.getCuotasTotales()))+"\n";
+        tablaAmortizacion+="Total\t\t"+String.valueOf(formato.format(this.getInteresTotal()))+"\t"+String.valueOf(formato.format(this.getAmortizacion()))+"\t"+String.valueOf(formato.format(this.getCuotasTotales()))+"\n";
         return tablaAmortizacion;
     }
 

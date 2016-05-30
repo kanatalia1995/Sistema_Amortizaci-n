@@ -16,6 +16,7 @@ import java.net.URL;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
+import VistaGUI.VistaGUI;
 
 /**
  *
@@ -52,7 +53,9 @@ public class Sistema_AmortizacionRob {
         CreadorSistemaAmortizacion creador = new CreadorAleman();
         SistemaAmortizacion tipo = creador.crearSistemaAmortizacion(datos);
         System.out.print(tipo.calcularTablaAmortizacion());*/
-        Modelo.SistemaAmortizacion.Aleman al=new Modelo.SistemaAmortizacion.Aleman(1000000, 5, 0.15, "colones");
-        System.out.println(al.calcularTablaAmortizacion());
+        /*Modelo.SistemaAmortizacion.Aleman al=new Modelo.SistemaAmortizacion.Aleman(1000000, 5, 0.15, "colones");
+        System.out.println(al.calcularTablaAmortizacion());*/
+        VistaGUI vg = new VistaGUI();
+        vg.setVisible(true);
     }
 }
