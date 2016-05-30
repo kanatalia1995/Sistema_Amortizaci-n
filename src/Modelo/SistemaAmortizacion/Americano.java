@@ -27,7 +27,7 @@ public class Americano extends SistemaAmortizacion {
         DecimalFormat formato = new DecimalFormat("0.00");
         
         String tablaAmortizacion="";
-        tablaAmortizacion+="\nTabla de Amortizacion:\n";
+        tablaAmortizacion+="Tabla de Amortizacion:\n";
         tablaAmortizacion+="\nPeriodo\tDeuda Inicial\tIntereses\tAmortizacion\tCuota\n\n";
         
         for (int i=1;i<this.getPeriodos();i++){
@@ -42,11 +42,10 @@ public class Americano extends SistemaAmortizacion {
         String interesActual=String.valueOf(formato.format(this.calcularInteres()));
         String cuota=String.valueOf(formato.format(calcularCuota(this.getPeriodos())));
         String amortizacionActual=String.valueOf(formato.format(calcularAmortizacion(this.getMontoInicial())));
-        System.out.println(this.getDeudaActual());
         tablaAmortizacion+=String.valueOf(this.getPeriodos())+"\t"+montoActual+"\t"+interesActual+"\t"+amortizacionActual+"\t"+cuota+"\n";
         
         //Montos totales
-        tablaAmortizacion+="Total\t\t"+String.valueOf(this.getInteresTotal())+"\t"+String.valueOf(this.getAmortizacion())+"\t"+String.valueOf(this.getCuotasTotales())+"\n";
+        tablaAmortizacion+="Total\t\t"+String.valueOf(formato.format(this.getInteresTotal()))+"\t"+String.valueOf(formato.format(this.getAmortizacion()))+"\t"+String.valueOf(formato.format(this.getCuotasTotales()));
         return tablaAmortizacion;
     }
 
@@ -86,10 +85,12 @@ public class Americano extends SistemaAmortizacion {
 
     @Override
     public String obtenerInformacion() {
+        DecimalFormat formato = new DecimalFormat("0.00");
+        
         String info="";
-        info+="\nDatos de la consulta:\n";
+        info+="Datos de la consulta:\n";
         info+=this.getCliente().toString()+"\n";
-        info+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
+        info+="Monto del préstamo otorgado: "+String.valueOf(formato.format(this.getMontoInicial()))+" de "+this.getTipoMoneda()+"\n";
         info+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
         info+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
         info+="Sistema de amortización: Americano\n";

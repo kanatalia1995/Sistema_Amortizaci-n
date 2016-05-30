@@ -39,7 +39,7 @@ public class Frances extends SistemaAmortizacion{
             String cuota=String.valueOf(formato.format(calcularCuota(this.getMontoInicial())));
             tablaAmortizacion+=String.valueOf(i)+"\t  "+montoActual+"\t "+interesActual+"\t "+amortizacionActual+"\t "+cuota+"\n";             
         }
-        tablaAmortizacion+="Total\t\t"+String.valueOf(formato.format(this.getInteresTotal()))+"\t"+String.valueOf(formato.format(this.getAmortizacion()))+"\t"+String.valueOf(formato.format(this.getCuotasTotales()))+"\n";
+        tablaAmortizacion+="Total\t\t"+String.valueOf(formato.format(this.getInteresTotal()))+"\t"+String.valueOf(formato.format(this.getAmortizacion()))+"\t"+String.valueOf(formato.format(this.getCuotasTotales()));
         return tablaAmortizacion;
     }
 
@@ -74,10 +74,11 @@ public class Frances extends SistemaAmortizacion{
     }*/
     
     public String obtenerInformacion(){
+        DecimalFormat formato = new DecimalFormat("0.00");
         String info="";
-        info+="\nDatos de la consulta:\n";
+        info+="Datos de la consulta:\n";
         info+=this.getCliente().toString()+"\n";
-        info+="Monto del préstamo otorgado: "+String.valueOf(this.getMontoInicial())+" de "+this.getTipoMoneda()+"\n";
+        info+="Monto del préstamo otorgado: "+String.valueOf(formato.format(this.getMontoInicial()))+" de "+this.getTipoMoneda()+"\n";
         info+="Plazo del préstamo: "+String.valueOf(this.getPeriodos())+" años\n";
         info+="Interés Anual: "+String.valueOf(Math.round(this.getInteresAnual()*100))+"%\n";
         info+="Sistema de amortización: Francés\n";
