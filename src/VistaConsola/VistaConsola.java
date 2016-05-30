@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Vistas;
+package VistaConsola;
 
 import Adaptadores.FechaHoraSistema.AdaptadorChuky;
 import Adaptadores.FechaHoraSistema.FechaHoraSistema;
@@ -12,6 +12,7 @@ import Controlador.ControladorSistemaAmortizacion;
 import Utilidades.DTO;
 import Utilidades.Enumeraciones.TipoMoneda;
 import Utilidades.Enumeraciones.TipoSistema;
+import java.net.ConnectException;
 import java.util.Scanner;
 
 /**
@@ -74,7 +75,7 @@ public class VistaConsola{
                  System.out.print("\n");
                  System.out.print(controlador.obtenerTipoCambioCompra());
                  System.out.print(controlador.obtenerInformacionAmortizacion());
-                 //System.out.print(controlador.obtenerfechaHoraSistema());
+                 System.out.print(controlador.obtenerfechaHoraSistema());
             }
             System.out.print("\n\n¿Desea realizar otra consulta?(1=Si,0=No)");
             
