@@ -290,7 +290,7 @@ public class VistaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCancelarActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_bCancelarActionPerformed
 
     private void bConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bConsultarActionPerformed

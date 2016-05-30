@@ -3,10 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/usuario/Documents/TEC/Diseño/Progra/Sistema_Amortizaci-n/src/Adaptadores/FechaHoraSistema/AdaptadorChuky.java</file>
-            <file>file:/C:/Users/usuario/Documents/TEC/Diseño/Progra/Sistema_Amortizaci-n/src/Controlador/ControladorSistemaAmortizacion.java</file>
-            <file>file:/C:/Users/usuario/Documents/TEC/Diseño/Progra/Sistema_Amortizaci-n/src/Modelo/SistemaAmortizacion/Frances.java</file>
-            <file>file:/C:/Users/usuario/Documents/TEC/Diseño/Progra/Sistema_Amortizaci-n/src/Modelo/SistemaAmortizacion/SistemaAmortizacion.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Controlador/Bitácora/XML.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Controlador/Bitácora/Registro.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Modelo/SistemaAmortizacion/Aleman.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/sistema_amortización/XMLPrueba.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Controlador/Bitácora/Bitacora.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/VistaGUI/VistaGUI.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Controlador/Bitácora/CVS.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Modelo/SistemaAmortizacion/Frances.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Controlador/ControladorSistemaAmortizacion.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/sistema_amortización/Sistema_AmortizacionKate.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/Modelo/SistemaAmortizacion/Americano.java</file>
+            <file>file:/C:/Users/Katerine/Documents/NetBeansProjects/Sistema_Amortizaci-n/src/sistema_amortización/EscribirArchivo.java</file>
         </group>
     </open-files>
 </project-private>
